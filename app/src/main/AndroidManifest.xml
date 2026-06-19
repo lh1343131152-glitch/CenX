@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.centigrade.browser"
+    android:versionCode="40"
+	android:versionName="4.0">
+
+    <uses-sdk tools:overrideLibrary="org.mozilla.geckoview" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <!-- 所有文件访问权限（Android 11+），用于快捷链接图标图片选择等 -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:name=".CenXApp"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="CenX"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BrowserApp"
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BrowserApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/html" />
+                <data android:mimeType="text/*" />
+                <data android:mimeType="application/xhtml+xml" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AiChatActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".AiSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".QrScanActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".SourceViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".ToolboxActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".UserAgentSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".SearchEngineSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".HomepageSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".FeatureSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".BrowserControlSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".CookieManagerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".ClearDataSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".SiteAuthSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".LabActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+
+        <activity
+            android:name=".BookmarksActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+			 <activity
+            android:name=".HistoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+			
+        <activity
+            android:name=".DownloadManagerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service
+            android:name=".DownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+			
+        <!-- 已删除：VideoPlayerActivity, ReaderActivity, TranslateActivity -->
+
+        <activity
+        android:name=".ReaderModeActivity"
+        android:exported="false"
+        android:theme="@style/Theme.BrowserApp.ReaderMode" />
+
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BrowserApp" />
+    </application>
+</manifest>

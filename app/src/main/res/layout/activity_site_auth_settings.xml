@@ -1,0 +1,195 @@
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_settings_subpage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceContainer">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/settings_subpage_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp"
+        app:hyperClipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="24dp">
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="基础配置"
+                        app:hyperTextStyle="body" />
+                    
+                    <EditText
+                        android:id="@+id/edit_site_host"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="站点 Host (例如: example.com)"
+                        android:inputType="textUri"/>
+
+                    <com.centigrade.ui.widget.HyperButton
+                        android:id="@+id/btn_load_site_auth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="加载已有配置"
+                        app:hyperButtonStyle="primary"/>
+
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+                    
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="请求头与Cookie"
+                        app:hyperTextStyle="body" />
+
+                    <EditText
+                        android:id="@+id/edit_site_cookie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="自定义 Cookie (会合并系统Cookie)"
+                        android:inputType="textMultiLine"/>
+
+                    <EditText
+                        android:id="@+id/edit_site_authorization"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Authorization (例如: Bearer xxx)"
+                        android:inputType="text"/>
+
+                    <EditText
+                        android:id="@+id/edit_site_referer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="自定义 Referer"
+                        android:inputType="textUri"/>
+
+                    <EditText
+                        android:id="@+id/edit_site_origin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="自定义 Origin"
+                        android:inputType="textUri"/>
+
+                    <EditText
+                        android:id="@+id/edit_site_ua_override"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="覆盖 User-Agent (留空则用全局UA)"
+                        android:inputType="text"/>
+
+                    <EditText
+                        android:id="@+id/edit_site_extra_headers_json"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="其他请求头 (JSON格式)"
+                        android:inputType="textMultiLine"/>
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="行为开关"
+                        app:hyperTextStyle="body" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_enable_auth_injection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:checked="true"
+                        android:text="启用站点鉴权注入" />
+                    
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_enable_401_retry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="启用 401 自动重试" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_force_cookie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="强制站点Cookie覆盖系统Cookie" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+            
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+                    
+                    <com.centigrade.ui.widget.HyperButton
+                        android:id="@+id/btn_save_site_auth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="保存配置"
+                        app:hyperButtonStyle="primary"/>
+                    
+                    <com.centigrade.ui.widget.HyperButton
+                        android:id="@+id/btn_delete_site_auth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="删除此站点配置"
+                        app:hyperButtonStyle="secondary"/>
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+        </LinearLayout>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

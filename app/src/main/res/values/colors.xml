@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- HyperOS / 澎湃 OS 风格：暖白底 + 米杏主色 + 轻柔层级 -->
+    <color name="primary">#FFA0642F</color>
+    <color name="primary_dark">#FF8A5529</color>
+    <color name="primary_light">#FFD5AA84</color>
+    <color name="accent">#FFA0642F</color>
+
+    <!-- 基础背景 -->
+    <color name="background">#ffffffff</color>
+    <color name="surface">#FFF8F1EC</color>
+    <color name="surface_variant">#FFFDF9F6</color>
+    <color name="card_background">#FFFDFBF9</color>
+    <color name="dialog_background">#ffffffff</color>
+    <color name="overlay_scrim">#5A1E140E</color>
+
+    <!-- HyperOS 层级补充 -->
+    <color name="surface_soft">#FFF4E8E0</color>
+    <color name="surface_soft_2">#FFF9F2ED</color>
+    <color name="surface_pressed">#1AA0642F</color>
+    <color name="surface_stroke">#FFD8C1B2</color>
+
+    <!-- 文本 -->
+    <color name="text_primary">#FF231815</color>
+    <color name="text_secondary">#FF7D675B</color>
+    <color name="text_hint">#FFB09A8D</color>
+    <color name="text_on_primary">#FFFFFFFF</color>
+    <color name="text_on_surface">#FF231815</color>
+    <color name="text_white">#FFFFFFFF</color>
+    <color name="text_black">#FF111111</color>
+
+    <!-- 分割线 -->
+    <color name="divider">#1F6E4C36</color>
+
+    <!-- 图标 -->
+    <color name="icon_color">#FF7D675B</color>
+    <color name="icon_active">#FFA0642F</color>
+    <color name="system_bar_scrim">#00000000</color>
+    <color name="web_tint_fallback">#FFF6EEE9</color>
+
+    <!-- 标签页 -->
+    <color name="tab_background">#FFF8F1EC</color>
+    <color name="tab_selected">#FFFDFBF9</color>
+    <color name="tab_unselected">#00000000</color>
+    <color name="tab_text">#FF231815</color>
+
+    <!-- BottomBar -->
+    <color name="nav_background">#FFF8F1EC</color>
+    <color name="nav_icon">#FF7D675B</color>
+    <color name="nav_icon_active">#FFA0642F</color>
+
+    <!-- 按钮 -->
+    <color name="button_primary_bg">#FFA0642F</color>
+    <color name="button_primary_text">#FFFFFFFF</color>
+    <color name="button_secondary_bg">#00FFFFFF</color>
+    <color name="button_secondary_text">#FFA0642F</color>
+    <color name="button_danger_bg">#14D93025</color>
+    <color name="button_danger_text">#FFC83B30</color>
+
+    <!-- 引导页 -->
+    <color name="guide_page_1_bg">#FFFBECE6</color>
+    <color name="guide_page_2_bg">#FFF9E8E1</color>
+    <color name="guide_page_3_bg">#FFFDF2EC</color>
+    <color name="guide_indicator_active">#FF4C8DFF</color>
+    <color name="guide_indicator_inactive">#FFF0DDD4</color>
+
+    <!-- 功能色 -->
+    <color name="green">#FF34C759</color>
+    <color name="red">#FFFF3B30</color>
+    <color name="orange">#FFFF9500</color>
+    <color name="blue">#ff57AAFD</color>
+    <color name="yellow">#FFFFCC00</color>
+    <color name="purple">#FFAF52DE</color>
+
+    <!-- 代码 -->
+    <color name="code_bg">#FF1E1E1E</color>
+    <color name="code_text">#FFD4D4D4</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- 通用 -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    
+    <!-- 基础颜色 -->
+    <color name="primary_color">#007AFF</color> 
+    <color name="gray_text">#999999</color>
+   
+    <color name="card">#ffffff</color>
+    <color name="icon">#FFA0C4FF</color>
+    <color name="textone">#ff000000</color>
+    <color name="texttwo">#ff999999</color>
+    <color name="cardx">#fefefe</color>
+    <color name="line">#1f000000</color>
+    <color name="cate">#FFEEEEEE</color>
+    <color name="textthree">#FF424242</color>
+</resources>

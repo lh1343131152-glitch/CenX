@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_settings_subpage"
+    android:background="?attr/colorSurfaceContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/settings_subpage_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp"
+        app:hyperClipToPadding="false">
+
+        <com.centigrade.ui.widget.HyperCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <com.centigrade.ui.widget.HyperTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户代理"
+                    app:hyperTextStyle="section" />
+
+                <RadioGroup
+                    android:id="@+id/ua_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <RadioButton
+                        android:id="@+id/ua_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="@string/ua_default"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/ua_desktop"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="@string/ua_desktop"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/ua_ipad"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="@string/ua_ipad"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/ua_iphone"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="@string/ua_iphone"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+                </RadioGroup>
+            </LinearLayout>
+        </com.centigrade.ui.widget.HyperCardView>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

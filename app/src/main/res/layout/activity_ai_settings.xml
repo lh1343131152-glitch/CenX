@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_settings_subpage"
+    android:background="?attr/colorSurfaceContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/settings_subpage_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp"
+        app:hyperClipToPadding="false">
+
+        <com.centigrade.ui.widget.HyperCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <com.centigrade.ui.widget.HyperTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AI 接口配置"
+                    app:hyperTextStyle="section" />
+
+                <EditText
+                    android:id="@+id/edit_ai_api_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/url_bg"
+                    android:hint="Base URL，如 https://api.openai.com/v1/chat/completions"
+                    android:inputType="textUri"
+                    android:paddingHorizontal="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/edit_ai_api_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/url_bg"
+                    android:hint="API Key"
+                    android:paddingHorizontal="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/edit_ai_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/url_bg"
+                    android:hint="模型，如 gpt-4o-mini"
+                    android:paddingHorizontal="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp" />
+
+                <com.centigrade.ui.widget.HyperButton
+                    android:id="@+id/btn_ai_save_config"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:text="保存 AI 配置"
+                    app:hyperButtonStyle="primary" />
+            </LinearLayout>
+        </com.centigrade.ui.widget.HyperCardView>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

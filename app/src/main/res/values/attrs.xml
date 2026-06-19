@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="HyperSettingsItemView">
+        <attr name="hyperTitle" format="string" />
+        <attr name="hyperSummary" format="string" />
+        <attr name="hyperValue" format="string" />
+        <attr name="hyperShowArrow" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="HyperTextView">
+        <attr name="hyperTextStyle">
+            <enum name="title" value="0" />
+            <enum name="body" value="1" />
+            <enum name="caption" value="2" />
+            <enum name="value" value="3" />
+            <enum name="section" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="HyperRootLayout">
+        <attr name="hyperUseDefaultPadding" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="HyperScrollView">
+        <attr name="hyperClipToPadding" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="HyperButton">
+        <attr name="hyperButtonStyle">
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="danger" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="HyperToolbar">
+        <attr name="hyperTitleText" format="string|reference" />
+        <attr name="hyperExpandedTextSize" format="dimension|reference" />
+        <attr name="hyperCollapsedTextSize" format="dimension|reference" />
+        <attr name="hyperTitleStartMargin" format="dimension|reference" />
+        <attr name="hyperTitleBottomMargin" format="dimension|reference" />
+    </declare-styleable>
+    
+</resources>

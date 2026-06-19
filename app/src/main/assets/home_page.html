@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f5f7fb;
+            --text: #111111;
+            --muted: #6f6f6f;
+            --surface: rgba(255,255,255,0.78);
+            --surface-strong: rgba(255,255,255,0.92);
+            --stroke: rgba(17,17,17,0.08);
+            --search-bg: rgba(255,255,255,0.86);
+            --placeholder: #9aa0a6;
+            --logo-bg: #ffffff;
+            --logo-shadow: 0 8px 24px rgba(0,0,0,0.10);
+            --launch-shadow: 0 16px 48px rgba(0,0,0,0.18);
+            --primary: #8f8dae;
+            --primary-soft: rgba(143,141,174,0.12);
+            --home-bg-image: none;
+            --home-overlay: rgba(245,247,251,0.80);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1115;
+                --text: #f5f7fb;
+                --muted: #a6b0bc;
+                --surface: rgba(28,31,38,0.78);
+                --surface-strong: rgba(28,31,38,0.92);
+                --stroke: rgba(255,255,255,0.08);
+                --search-bg: rgba(28,31,38,0.90);
+                --placeholder: #7f8a96;
+                --logo-bg: #1a1f26;
+                --logo-shadow: 0 10px 28px rgba(0,0,0,0.30);
+                --launch-shadow: 0 18px 54px rgba(0,0,0,0.42);
+                --primary: #b3afd6;
+                --primary-soft: rgba(179,175,214,0.18);
+                --home-overlay: rgba(15,17,21,0.74);
+            }
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+        html, body { height:100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "PingFang SC", sans-serif;
+            background-color: var(--bg);
+            background-image: linear-gradient(var(--home-overlay), var(--home-overlay)), var(--home-bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--text);
+            overflow-x: hidden;
+            transition: background-color .22s ease, color .22s ease;
+        }
+
+        .page-home {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 82px 20px 40px;
+        }
+
+        body.launching .logo-wrap,
+        body.launching .search-shell,
+        body.launching .quick-links {
+            opacity: 0;
+            transform: scale(0.985) translateY(8px);
+            transition: opacity .22s ease, transform .22s ease;
+        }
+
+        .logo-wrap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            width: 88px;
+            height: 88px;
+            border-radius: 28px;
+            background: var(--logo-bg) url('logo.png') center/cover no-repeat;
+            box-shadow: var(--logo-shadow);
+            margin-bottom: 14px;
+            border: 1px solid var(--stroke);
+        }
+        
+        .scan {
+    width: 24px;
+    height: 24px;
+    background: url('scan.png') center/contain no-repeat;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.scan:hover {
+    opacity: 0.8;
+}
+
+        h1 {
+            font-size: 22px;
+            color: var(--text);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .sub {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .search-shell {
+            width: 100%;
+            max-width: 620px;
+            margin-bottom: 26px;
+        }
+
+        .search-box {
+            min-height: 58px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--stroke);
+            border-radius: 28px;
+            background: var(--search-bg);
+            padding: 6px 6px 6px 14px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transition: background-color .22s ease, border-color .22s ease;
+        }
+
+        .leading-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            flex-shrink: 0;
+            background: transparent;
+        }
+
+        .search-box input {
+            flex: 1;
+            min-width: 0;
+            height: 44px;
+            border: 0;
+            background: transparent;
+            outline: none;
+            font-size: 15px;
+            color: var(--text);
+        }
+
+        .search-box input::placeholder {
+            color: var(--placeholder);
+        }
+
+        .search-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .icon-btn,
+        .search-btn {
+            border: 0;
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 18px;
+            background: var(--surface-strong);
+            color: var(--text);
+            border: 1px solid var(--stroke);
+        }
+
+        .search-btn {
+            height: 44px;
+            padding: 0 18px;
+            border-radius: 18px;
+            background: var(--primary-soft);
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .md3-symbol {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .md3-search::before,
+        .md3-search::after,
+        .md3-scan::before,
+        .md3-scan::after,
+        .md3-add::before,
+        .md3-add::after {
+            content: "";
+            position: absolute;
+            display: block;
+        }
+
+        .md3-search::before {
+            width: 11px;
+            height: 11px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            left: 2px;
+            top: 2px;
+        }
+
+        .md3-search::after {
+            width: 8px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            transform: rotate(45deg);
+            right: 1px;
+            bottom: 3px;
+        }
+
+        .md3-scan::before {
+            inset: 3px;
+            border: 2px solid currentColor;
+            border-top: 0;
+            border-bottom: 0;
+            opacity: .9;
+        }
+
+        .md3-scan::after {
+            left: 2px;
+            right: 2px;
+            top: 10px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            box-shadow: 0 -7px 0 -1px currentColor, 0 7px 0 -1px currentColor;
+            opacity: .88;
+        }
+
+        .md3-add::before {
+            width: 14px;
+            height: 2.4px;
+            background: currentColor;
+            border-radius: 2px;
+            left: 4px;
+            top: 10px;
+        }
+
+        .md3-add::after {
+            width: 2.4px;
+            height: 14px;
+            background: currentColor;
+            border-radius: 2px;
+            left: 10px;
+            top: 4px;
+        }
+
+        .quick-links {
+            width: 100%;
+            max-width: 600px;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 8px;
+            justify-content: stretch;
+            padding: 16px 10px 10px;
+            border-radius: 28px;
+            background: var(--surface);
+            border: 1px solid var(--stroke);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+
+        .quick-link,
+        .quick-link-add {
+            width: 100%;
+            min-width: 0;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            position: relative;
+            transform-origin: center center;
+            transition: transform .28s cubic-bezier(.2,.8,.2,1), opacity .22s ease;
+            display: block;
+        }
+
+        .quick-link-inner,
+        .quick-link-add-inner {
+            width: 100%;
+            padding-top: 8px;
+            border-radius: 20px;
+            transition: background-color .18s ease, transform .18s ease, box-shadow .18s ease;
+        }
+
+        .quick-link:active .quick-link-inner,
+        .quick-link-add:active .quick-link-add-inner {
+            transform: scale(0.97);
+        }
+
+        .quick-link.launching {
+            z-index: 20;
+            transform: scale(1.14);
+        }
+
+        .quick-link.launching .icon {
+            transform: scale(7.2);
+            border-radius: 26px;
+            box-shadow: var(--launch-shadow);
+        }
+
+        .quick-link.launching span {
+            opacity: 0;
+        }
+
+        .quick-link .icon,
+        .quick-link-add .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-size: 20px;
+            color: #fff;
+            transition: transform .42s cubic-bezier(.2,.8,.2,1), border-radius .42s cubic-bezier(.2,.8,.2,1), box-shadow .42s ease, background-color .3s ease;
+            overflow: hidden;
+        }
+
+        .quick-link span,
+        .quick-link-add span {
+            display: block;
+            font-size: 12px;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 0 4px 10px;
+            transition: opacity .18s ease;
+        }
+
+        .quick-link-add .icon {
+            color: var(--primary);
+            background: var(--primary-soft);
+            border: 1px dashed rgba(143,141,174,0.42);
+        }
+
+        .icon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        @media (max-width: 640px) {
+            .page-home {
+                padding: 72px 14px 28px;
+            }
+
+            .search-box {
+                min-height: 56px;
+                border-radius: 24px;
+                padding-left: 12px;
+            }
+
+            .icon-btn,
+            .search-btn {
+                border-radius: 16px;
+            }
+
+            .quick-links {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                border-radius: 24px;
+            }
+
+            .quick-link .icon,
+            .quick-link-add .icon {
+                width: 44px;
+                height: 44px;
+                border-radius: 16px;
+            }
+
+            .icon-img {
+                border-radius: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-home">
+        <div class="logo-wrap">
+            <div class="logo"></div>
+            <h1>CenX 浏览器</h1>
+            <p class="sub">信息于你无限</p>
+        </div>
+
+        <div class="search-shell">
+            <div class="search-box">
+                <div class="leading-icon" aria-hidden="true">
+                    <span class="md3-symbol md3-search"></span>
+                </div>
+                <input id="q" type="text" placeholder="搜索或输入网址" />
+                <div class="search-actions">
+<button class="scan" onclick="scanQr()" title="扫一扫" aria-label="扫一扫"></button>
+                    <button class="search-btn" onclick="search()">搜索</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <a class="quick-link-add" href="javascript:void(0)" onclick="addQuickLink()">
+                <div class="quick-link-add-inner">
+                    <div class="icon">
+                        <span class="md3-symbol md3-add"></span>
+                    </div>
+                    <span>新建快捷链接</span>
+                </div>
+            </a>
+            {{QUICK_LINKS}}
+        </div>
+    </div>
+
+    <script>
+        var SEARCH_TMPL = '{{SEARCH_URL}}';
+        var HOME_BG = '{{HOME_BG}}';
+        var HOME_BG_COLOR = '{{HOME_BG_COLOR}}';
+
+        // 动态设置背景色（跟随 CenXTheme）
+        if (HOME_BG_COLOR && HOME_BG_COLOR !== '{{HOME_BG_COLOR}}') {
+            document.documentElement.style.setProperty('--bg', HOME_BG_COLOR);
+            // 同时调整 overlay 透明度，使背景图片能柔和叠加上去
+            document.documentElement.style.setProperty('--home-overlay', hexToRgba(HOME_BG_COLOR, 0.80));
+            // 深色模式下降低 overlay 透明度
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.style.setProperty('--home-overlay', hexToRgba(HOME_BG_COLOR, 0.74));
+            }
+        }
+
+        if (HOME_BG) {
+            var safeBg = HOME_BG;
+            if (!(safeBg.startsWith('content://') || safeBg.startsWith('file://') || safeBg.startsWith('http://') || safeBg.startsWith('https://'))) {
+                safeBg = 'file://' + safeBg;
+            }
+            document.documentElement.style.setProperty('--home-bg-image', 'url("' + safeBg + '")');
+        }
+
+        // 辅助函数：十六进制颜色 → rgba
+        function hexToRgba(hex, alpha) {
+            hex = hex.replace('#', '');
+            if (hex.length === 8) hex = hex.substring(0, 6); // 去掉可能有的 alpha 通道
+            var r = parseInt(hex.substring(0, 2), 16);
+            var g = parseInt(hex.substring(2, 4), 16);
+            var b = parseInt(hex.substring(4, 6), 16);
+            return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+        }
+
+        function search() {
+            var val = document.getElementById('q').value.trim();
+            if (!val) return;
+
+            if (val.indexOf('.') > 0 && !val.startsWith('http')) {
+                window.location = 'https://' + val;
+            } else if (val.startsWith('http')) {
+                window.location = val;
+            } else {
+                window.location = SEARCH_TMPL.replace('{q}', encodeURIComponent(val));
+            }
+        }
+
+        function addQuickLink() {
+            if (window.CenXHome && typeof window.CenXHome.addQuickLink === 'function') {
+                window.CenXHome.addQuickLink();
+            }
+        }
+
+        function scanQr() {
+            if (window.CenXHome && typeof window.CenXHome.scanQr === 'function') {
+                window.CenXHome.scanQr();
+            }
+        }
+
+        document.getElementById('q').addEventListener('keydown', function(e) {
+            if (e.keyCode === 13) search();
+        });
+
+        document.querySelectorAll('.quick-link').forEach(function(link) {
+            link.innerHTML = "<div class='quick-link-inner'>" + link.innerHTML + "</div>";
+            link.addEventListener('click', function(e) {
+                var href = link.getAttribute('href');
+                if (!href) return;
+
+                e.preventDefault();
+
+                if (document.body.classList.contains('launching')) return;
+                document.body.classList.add('launching');
+                link.classList.add('launching');
+
+                setTimeout(function() {
+                    window.location = href;
+                }, 240);
+            });
+        });
+    </script>
+</body>
+</html>

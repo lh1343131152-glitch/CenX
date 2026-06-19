@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_windows"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="@string/windows_title"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_ai"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/menu_ai"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_source"
+        android:title="@string/menu_source" />
+    <item
+        android:id="@+id/menu_toolbox"
+        android:title="@string/menu_toolbox" />
+    <item
+        android:id="@+id/menu_bookmarks"
+        android:title="@string/menu_bookmarks" />
+    <item
+        android:id="@+id/menu_history"
+        android:title="@string/menu_history" />
+    <item
+        android:id="@+id/menu_share"
+        android:title="@string/menu_share" />
+    <item
+        android:id="@+id/menu_settings"
+        android:title="@string/menu_settings" />
+</menu>

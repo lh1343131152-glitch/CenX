@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_lab"
+    android:background="?attr/colorSurfaceContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/lab_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp"
+        app:hyperClipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_lab_site_auth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_lab_cookie_manager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+        </LinearLayout>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

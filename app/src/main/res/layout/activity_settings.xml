@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_settings"
+    android:background="?attr/colorSurfaceContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+   
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/settings_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp"
+        app:hyperClipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+      <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_file_permission"
+                android:layout_width="match_parent"
+            
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.centigrade.ui.widget.HyperTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="文件访问权限"
+                            app:hyperTextStyle="body" />
+
+                        <com.centigrade.ui.widget.HyperTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="用于快捷链接图标图片选择"
+                            app:hyperTextStyle="caption" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_file_permission_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="12dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="5dp"
+                        android:text="已授权"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_user_agent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_search_engine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_homepage_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_browser_control_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_feature_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_lab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_clear_data_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_ai_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+                <include layout="@layout/item_settings_entry" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+      
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/menu_about"
+                        app:hyperTextStyle="body" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/forward"
+                        android:tint="?attr/colorOutline" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+        </LinearLayout>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

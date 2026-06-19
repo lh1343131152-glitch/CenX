@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_settings_subpage"
+    android:background="?attr/colorSurfaceContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/settings_subpage_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp"
+        app:hyperClipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="搜索引擎"
+                        app:hyperTextStyle="section" />
+
+                    <RadioGroup
+                        android:id="@+id/search_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp">
+
+                        <RadioButton
+                            android:id="@+id/search_baidu"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:text="@string/search_baidu"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/search_google"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:text="@string/search_google"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/search_bing"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:text="@string/search_bing"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/search_sogou"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:text="@string/search_sogou"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/search_duckduckgo"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:text="@string/search_duckduckgo"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/search_metaso"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:text="@string/search_metaso"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/search_custom"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:text="自定义"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/custom_search_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/url_bg"
+                        android:gravity="center_vertical"
+                        android:hint="自定义搜索地址（如 https://www.example.com/search?q=%s）"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/btn_save_custom_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/btn_primary"
+                        android:text="保存自定义搜索引擎"
+                        android:textColor="@color/button_primary_text"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+        </LinearLayout>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

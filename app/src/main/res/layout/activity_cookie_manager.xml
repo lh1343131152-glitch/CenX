@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_settings_subpage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceContainer">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/settings_subpage_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp"
+        app:hyperClipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="站点地址"
+                        app:hyperTextStyle="body" />
+
+                    <EditText
+                        android:id="@+id/edit_cookie_url"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="https://example.com"
+                        android:inputType="textUri" />
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Cookie 内容"
+                        app:hyperTextStyle="body" />
+
+                    <EditText
+                        android:id="@+id/edit_cookie_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="top|start"
+                        android:hint="name=value; Path=/; ..."
+                        android:inputType="textMultiLine"
+                        android:minLines="6" />
+
+                    <com.centigrade.ui.widget.HyperButton
+                        android:id="@+id/btn_read_cookie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="读取 Cookie"
+                        app:hyperButtonStyle="primary" />
+
+                    <com.centigrade.ui.widget.HyperButton
+                        android:id="@+id/btn_write_cookie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="写入 Cookie"
+                        app:hyperButtonStyle="primary" />
+
+                    <com.centigrade.ui.widget.HyperButton
+                        android:id="@+id/btn_clear_cookie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="清空该站点 Cookie"
+                        app:hyperButtonStyle="danger" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+        </LinearLayout>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

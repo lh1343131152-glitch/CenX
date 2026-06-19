@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/about_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp"
+        app:hyperClipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="123.8dp"
+                android:layout_height="99.6dp"
+                android:layout_marginTop="24dp">
+
+                <ImageView
+                    android:layout_width="123.8dp"
+                    android:layout_height="99.6dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/inb" />
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperTextView
+                android:id="@+id/tv_about_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/app_name"
+                app:hyperTextStyle="title" />
+
+            <com.centigrade.ui.widget.HyperTextView
+                android:id="@+id/tv_about_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/about_version"
+                app:hyperTextStyle="caption" />
+
+            <com.centigrade.ui.widget.HyperTextView
+                android:id="@+id/tv_about_developer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/about_developer"
+                app:hyperTextStyle="caption" />
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_user_agreement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/about_user_agreement"
+                        app:hyperTextStyle="body" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/forward"
+                        android:tint="@color/text_hint" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:id="@+id/card_join_qq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="加入QQ群"
+                        app:hyperTextStyle="body" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/forward"
+                        android:tint="@color/text_hint" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+        </LinearLayout>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

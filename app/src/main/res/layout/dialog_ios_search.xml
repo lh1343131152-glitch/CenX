@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/dialog_ios_background">
+
+    <!-- 顶部指示条 -->
+    <View
+        android:id="@+id/dialog_top_indicator"
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+ android:background="@color/text_secondary"
+        android:alpha="0.5"
+        android:layout_marginBottom="16dp" />
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="搜索或输入网址"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- 搜索输入框 -->
+    <EditText
+        android:id="@+id/dialog_search_input"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/url_bg"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:hint="搜索或输入网址"
+        android:inputType="textUri"
+        android:imeOptions="actionSearch"
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 按钮区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.centigrade.ui.widget.HyperButton
+            android:id="@+id/dialog_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="取消"
+            app:hyperButtonStyle="secondary" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
+
+        <com.centigrade.ui.widget.HyperButton
+            android:id="@+id/dialog_btn_search"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="搜索"
+            app:hyperButtonStyle="primary" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp">
+
+        <com.centigrade.ui.widget.HyperTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:text="长按主页按钮可以添加书签"
+            app:hyperTextStyle="caption" />
+
+        <ListView
+            android:id="@+id/list_bookmarks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:divider="@color/divider"
+            android:dividerHeight="0.5dp" />
+
+        <com.centigrade.ui.widget.HyperTextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="暂无书签"
+            android:visibility="gone"
+            app:hyperTextStyle="body" />
+    </LinearLayout>
+</com.centigrade.ui.widget.HyperRootLayout>

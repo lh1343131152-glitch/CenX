@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_source"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/background"
+        android:title="@string/source_title"
+        android:titleTextColor="@color/text_primary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <com.centigrade.ui.widget.HyperCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/code_bg"
+            android:clipToPadding="false">
+
+            <TextView
+                android:id="@+id/source_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:padding="16dp"
+                android:textColor="@color/code_text"
+                android:textSize="12sp" />
+        </ScrollView>
+    </com.centigrade.ui.widget.HyperCardView>
+
+    <com.centigrade.ui.widget.HyperButton
+        android:id="@+id/btn_copy_source"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/source_copy"
+        app:hyperButtonStyle="primary" />
+</com.centigrade.ui.widget.HyperRootLayout>

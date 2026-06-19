@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_settings_subpage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceContainer">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <com.centigrade.ui.widget.HyperScrollView
+        android:id="@+id/settings_subpage_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp"
+        app:hyperClipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="页面缩放与视口"
+                        app:hyperTextStyle="body" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_support_zoom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="启用页面缩放" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_builtin_zoom_controls"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="启用内置缩放控件" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_display_zoom_controls"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="显示屏幕缩放按钮" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_wide_viewport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="使用宽视口" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_load_with_overview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="页面按概览模式加载" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="访问与窗口"
+                        app:hyperTextStyle="body" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_allow_file_access"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="允许文件访问" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_allow_content_access"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="允许内容访问" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_accept_cookies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="允许所有 Cookie" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_dom_storage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="启用 DOM Storage" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_database"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="启用 Database Storage" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_save_form_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="保存表单数据" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_geolocation_enabled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="启用地理定位" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_js_open_windows"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="允许 JavaScript 自动开窗" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_support_multiple_windows"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="支持多窗口" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_accept_third_party_cookies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="接受第三方 Cookie" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="网络隐私与省流"
+                        app:hyperTextStyle="body" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_do_not_track"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="发送 Do Not Track 请求头" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_save_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="发送 Save-Data 省流请求头" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_send_x_requested_with"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="发送 X-Requested-With 应用标识" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+            <com.centigrade.ui.widget.HyperCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="文本与编码"
+                        app:hyperTextStyle="body" />
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="文本缩放（50-200）"
+                        app:hyperTextStyle="caption" />
+
+                    <EditText
+                        android:id="@+id/edit_text_zoom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:hint="100"
+                        android:inputType="number" />
+
+                    <com.centigrade.ui.widget.HyperTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="默认文本编码"
+                        app:hyperTextStyle="caption" />
+
+                    <EditText
+                        android:id="@+id/edit_default_encoding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:hint="UTF-8"
+                        android:inputType="text" />
+
+                    <Button
+                        android:id="@+id/btn_save_browser_controls"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="保存高级设置" />
+                </LinearLayout>
+            </com.centigrade.ui.widget.HyperCardView>
+
+        </LinearLayout>
+    </com.centigrade.ui.widget.HyperScrollView>
+</com.centigrade.ui.widget.HyperRootLayout>

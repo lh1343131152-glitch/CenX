@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.centigrade.ui.widget.HyperRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="64dp">
+
+            <EditText
+                android:id="@+id/search_history"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/url_bg"
+                android:gravity="center_vertical"
+                android:hint="搜索历史记录..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="12dp"
+                android:singleLine="true"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="14sp" />
+
+            <ListView
+                android:id="@+id/list_history"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:divider="@color/divider"
+                android:dividerHeight="0.5dp" />
+
+            <com.centigrade.ui.widget.HyperTextView
+                android:id="@+id/tv_empty"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="暂无浏览记录"
+                android:visibility="gone"
+                app:hyperTextStyle="body" />
+        </LinearLayout>
+
+        <com.centigrade.ui.widget.HyperButton
+            android:id="@+id/btn_delete_all"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:text="清"
+            android:textSize="18sp"
+            app:hyperButtonStyle="primary" />
+    </FrameLayout>
+</com.centigrade.ui.widget.HyperRootLayout>

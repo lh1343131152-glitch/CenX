@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扫描线：渐变发光条 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#4DFFFFFF" />
+    <gradient
+        android:startColor="#00A0642F"
+        android:centerColor="#FFA0642F"
+        android:endColor="#00A0642F"
+        android:angle="0" />
+    <corners android:radius="2dp" />
+</shape>

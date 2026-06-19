@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主色 -->
+    <color name="primary">#FF5B8CFF</color>
+    <color name="primary_dark">#FF3F73F0</color>
+    <color name="primary_light">#FF1E2D52</color>
+    <color name="accent">#FF5B8CFF</color>
+
+    <!-- 基础背景 -->
+    <color name="background">#FF0F1115</color>
+    <color name="surface">#FF171A21</color>
+    <color name="surface_variant">#FF1E222B</color>
+    <color name="card_background">#FF1A1D24</color>
+    <color name="dialog_background">#FF1A1D24</color>
+    <color name="overlay_scrim">#99FFFFFF</color>
+
+    <!-- 文本 -->
+    <color name="text_primary">#FFF5F7FA</color>
+    <color name="text_secondary">#FFB3BAC7</color>
+    <color name="text_hint">#FF80889A</color>
+    <color name="text_on_primary">#FFFFFFFF</color>
+    <color name="text_on_surface">#FFF5F7FA</color>
+    <color name="text_white">#FFFFFFFF</color>
+    <color name="text_black">#FF111111</color>
+
+    <!-- 分割线 -->
+    <color name="divider">#FF2A2F3A</color>
+
+    <!-- 图标 -->
+    <color name="icon_color">#FFB3BAC7</color>
+    <color name="icon_active">#FF7AA2FF</color>
+    <color name="system_bar_scrim">#00000000</color>
+    <color name="web_tint_fallback">#FF12151B</color>
+
+    <!-- 标签页 -->
+    <color name="tab_background">#FF171A21</color>
+    <color name="tab_selected">#FF5B8CFF</color>
+    <color name="tab_unselected">#FF222734</color>
+    <color name="tab_text">#FFF5F7FA</color>
+
+    <!-- BottomBar -->
+    <color name="nav_background">#FF12151B</color>
+    <color name="nav_icon">#FFB3BAC7</color>
+    <color name="nav_icon_active">#FF7AA2FF</color>
+
+    <!-- 按钮 -->
+    <color name="button_primary_bg">#FF5B8CFF</color>
+    <color name="button_primary_text">#FFFFFFFF</color>
+    <color name="button_secondary_bg">#FF242936</color>
+    <color name="button_secondary_text">#FFF5F7FA</color>
+    <color name="button_danger_bg">#FF3A2326</color>
+    <color name="button_danger_text">#FFFFB4AB</color>
+
+    <!-- 引导页 -->
+    <color name="guide_page_1_bg">#FF0F1115</color>
+    <color name="guide_page_2_bg">#FF121823</color>
+    <color name="guide_page_3_bg">#FF10151D</color>
+    <color name="guide_indicator_active">#FF7AA2FF</color>
+    <color name="guide_indicator_inactive">#FF3A4354</color>
+
+    <!-- 功能色 -->
+    <color name="green">#FF4FD27A</color>
+    <color name="red">#FFFF6B60</color>
+    <color name="orange">#FFFFA940</color>
+    <color name="blue">#FF5B8CFF</color>
+    <color name="yellow">#FFFFD666</color>
+    <color name="purple">#FFC792EA</color>
+
+    <!-- 代码 -->
+    <color name="code_bg">#FF0C0F14</color>
+    <color name="code_text">#FFD9E1F2</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- 通用 -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>

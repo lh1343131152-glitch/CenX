@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bottom_background"
+    android:paddingBottom="8dp">
+
+    <!-- 手柄指示条 -->
+    <View
+        android:layout_width="36dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/text_hint"
+        android:alpha="0.3" />
+
+    <!-- 文本/Markdown 预览 -->
+    <WebView
+        android:id="@+id/tv_selected_text"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:layout_marginStart="16dp" />
+
+    <!-- 粘贴 -->
+    <TextView
+        android:id="@+id/btn_paste"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:text="粘贴"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:background="?attr/selectableItemBackground" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:layout_marginStart="20dp" />
+
+    <!-- 分享网页 -->
+    <TextView
+        android:id="@+id/btn_share_page"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:text="分享网页"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:background="?attr/selectableItemBackground" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:layout_marginStart="20dp" />
+
+    <!-- 取消按钮 -->
+    <Button
+        android:id="@+id/dialog_btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/url_bg"
+        android:text="取消"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+
+</LinearLayout>

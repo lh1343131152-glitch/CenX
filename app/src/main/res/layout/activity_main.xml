@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="?attr/colorSurface"
+    android:id="@+id/root_main">
+
+    <ImageView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:visibility="gone"
+         android:adjustViewBounds="false"
+         android:scaleType="centerCrop"
+         android:src="@android:color/transparent"
+         android:id="@+id/home_background_image" />
+
+    <View
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:background="@drawable/home_background_scrim"
+         android:id="@+id/home_background_scrim" />
+
+    
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:orientation="vertical"
+         android:id="@+id/main_content">
+
+        <LinearLayout
+             android:layout_height="54dp"
+             android:layout_width="match_parent"
+             android:visibility="gone"
+             android:background="@drawable/home_surface_glass"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:id="@+id/tab_bar_container">
+
+            <HorizontalScrollView
+                 android:layout_height="match_parent"
+                 android:layout_width="0dp"
+                 android:scrollbars="none"
+                 android:fillViewport="false"
+                 android:layout_weight="1"
+                 android:id="@+id/tab_scroll">
+
+                <LinearLayout
+                     android:layout_height="match_parent"
+                     android:layout_width="wrap_content"
+                     android:gravity="center_vertical"
+                     android:orientation="horizontal"
+                     android:id="@+id/tab_container">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                 android:layout_height="40dp"
+                 android:layout_width="40dp"
+                 android:background="@drawable/home_surface_glass_small"
+                 android:gravity="center"
+                 android:textSize="20sp"
+                 android:textColor="?attr/colorOnSurface"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/btn_tab_add_top"
+                 android:text="+"
+                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+             android:layout_height="64dp"
+             android:layout_width="match_parent"
+             android:paddingEnd="16dp"
+             android:background="@drawable/home_surface_glass"
+             android:paddingStart="16dp"
+             android:id="@+id/top_bar">
+
+            <ImageButton
+                 android:layout_height="36dp"
+                 android:layout_width="36dp"
+                 android:visibility="visible"
+                 android:scaleType="fitCenter"
+                 android:src="@drawable/restart"
+                 android:background="@drawable/home_surface_glass_small"
+                 android:layout_centerVertical="true"
+                 android:padding="6dp"
+                 android:layout_alignParentEnd="true"
+                 android:tint="?attr/colorOnSurface"
+                 android:id="@+id/btn_refresh" />
+
+            
+            
+
+                <TextView
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:layout_marginEnd="14dp"
+                     android:layout_toStartOf="@id/btn_refresh"
+                     android:gravity="center_vertical"
+                     android:ellipsize="end"
+                     android:textSize="18sp"
+                     android:textColor="?attr/colorOnSurface"
+                     android:maxLines="1"
+                     android:id="@+id/tv_title"
+                     android:text="浏览器"
+                     android:textStyle="bold" />
+
+            
+            
+
+            <LinearLayout
+                 android:layout_height="44dp"
+                 android:layout_width="match_parent"
+                 android:visibility="gone"
+                 android:layout_marginEnd="14dp"
+                 android:layout_toStartOf="@id/btn_refresh"
+                 android:paddingEnd="8dp"
+                 android:background="@drawable/home_surface_glass_small"
+                 android:gravity="center_vertical"
+                 android:layout_centerVertical="true"
+                 android:paddingStart="16dp"
+                 android:id="@+id/search_bar">
+
+                <EditText
+                     android:layout_height="match_parent"
+                     android:layout_width="0dp"
+                     android:imeOptions="actionGo"
+                     android:background="@android:color/transparent"
+                     android:hint="搜索或输入网址"
+                     android:textColorHint="?attr/colorOnSurfaceVariant"
+                     android:textSize="15sp"
+                     android:singleLine="true"
+                     android:textColor="?attr/colorOnSurface"
+                     android:layout_weight="1"
+                     android:inputType="textUri"
+                     android:id="@+id/edit_search" />
+
+                <ImageButton
+                     android:layout_height="28dp"
+                     android:layout_width="28dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/search"
+                     android:background="?attr/selectableItemBackgroundBorderless"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_search" />
+
+                <ImageButton
+                     android:layout_height="28dp"
+                     android:layout_width="28dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/unstart"
+                     android:background="?attr/selectableItemBackgroundBorderless"
+                     android:tint="?attr/colorOnSurface"
+                     android:minWidth="48dp"
+                     android:id="@+id/btn_cancel_search" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="44dp"
+                 android:layout_width="wrap_content"
+                 android:visibility="gone"
+                 android:gravity="center_vertical"
+                 android:layout_centerVertical="true"
+                 android:orientation="horizontal"
+                 android:layout_alignParentEnd="true"
+                 android:id="@+id/pad_bar_actions">
+
+                <ImageButton
+                     android:layout_height="36dp"
+                     android:layout_width="36dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/back"
+                     android:background="?attr/selectableItemBackgroundBorderless"
+                     android:padding="6dp"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_back_pad" />
+
+                <ImageButton
+                     android:layout_height="36dp"
+                     android:layout_width="36dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/forward"
+                     android:background="?attr/selectableItemBackgroundBorderless"
+                     android:padding="6dp"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_forward_pad" />
+
+                <ImageButton
+                     android:layout_height="36dp"
+                     android:layout_width="36dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/home"
+                     android:background="?attr/selectableItemBackgroundBorderless"
+                     android:padding="6dp"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_home_pad" />
+
+                <ImageButton
+                     android:layout_height="36dp"
+                     android:layout_width="36dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/tabs"
+                     android:background="?attr/selectableItemBackgroundBorderless"
+                     android:padding="6dp"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_tabs_pad" />
+
+                <ImageButton
+                     android:layout_height="36dp"
+                     android:layout_width="36dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/ic_more_horiz_24"
+                     android:background="?attr/selectableItemBackgroundBorderless"
+                     android:padding="6dp"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_more_pad" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+             android:layout_height="3dp"
+             android:layout_width="match_parent"
+             android:visibility="gone"
+             android:progressTint="@color/primary"
+             style="?android:attr/progressBarStyleHorizontal"
+             android:id="@+id/progress_bar" />
+
+        <FrameLayout
+             android:layout_height="0dp"
+             android:layout_width="match_parent"
+             android:layout_weight="1"
+             android:id="@+id/webview_container">
+
+        </FrameLayout>
+
+        <LinearLayout
+             android:layout_height="84dp"
+             android:layout_width="match_parent"
+             android:weightSum="5"
+             android:background="@drawable/home_surface_glass"
+             android:gravity="center"
+             android:orientation="horizontal"
+             android:id="@+id/bottom_bar">
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="0dp"
+                 android:gravity="center"
+                 android:layout_margin="6dp"
+                 android:orientation="vertical"
+                 android:layout_weight="1">
+
+                <ImageButton
+                     android:layout_height="28dp"
+                     android:layout_width="28dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/back"
+                     android:background="@android:color/transparent"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_back" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="0dp"
+                 android:gravity="center"
+                 android:layout_margin="6dp"
+                 android:orientation="vertical"
+                 android:layout_weight="1">
+
+                <ImageButton
+                     android:layout_height="28dp"
+                     android:layout_width="28dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/forward"
+                     android:background="@android:color/transparent"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_forward" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="0dp"
+                 android:gravity="center"
+                 android:orientation="vertical"
+                 android:layout_weight="1">
+
+                <FrameLayout
+                     android:layout_height="48dp"
+                     android:layout_width="48dp"
+                     android:background="@drawable/home_surface_primary_round">
+
+                    <ImageButton
+                         android:layout_height="28dp"
+                         android:layout_width="28dp"
+                         android:scaleType="fitCenter"
+                         android:src="@drawable/home"
+                         android:background="@android:color/transparent"
+                         android:tint="@android:color/white"
+                         android:id="@+id/btn_home"
+                         android:layout_gravity="center" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="0dp"
+                 android:gravity="center"
+                 android:layout_margin="6dp"
+                 android:orientation="vertical"
+                 android:layout_weight="1">
+
+                <ImageButton
+                     android:layout_height="28dp"
+                     android:layout_width="28dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/tabs"
+                     android:background="@android:color/transparent"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_tabs" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="0dp"
+                 android:gravity="center"
+                 android:layout_margin="6dp"
+                 android:orientation="vertical"
+                 android:layout_weight="1">
+
+                <ImageButton
+                     android:layout_height="28dp"
+                     android:layout_width="28dp"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/ic_more_horiz_24"
+                     android:background="@android:color/transparent"
+                     android:tint="?attr/colorOnSurface"
+                     android:id="@+id/btn_more_bottom" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 浏览器UI全屏模式退出按钮（覆盖所有内容） -->
+    <FrameLayout
+         android:layout_height="56dp"
+         android:layout_width="56dp"
+         android:visibility="gone"
+         android:layout_margin="24dp"
+         android:layout_gravity="bottom|end"
+         android:id="@+id/btn_exit_fullscreen"
+         android:background="@drawable/bg_fullscreen_exit"
+         android:clickable="true"
+         android:focusable="true">
+        <ImageView
+             android:layout_height="28dp"
+             android:layout_width="28dp"
+             android:layout_gravity="center"
+             android:src="@drawable/ic_fullscreen_exit"
+             android:contentDescription="退出全屏"
+             android:tint="#FFFFFF" />
+    </FrameLayout>
+
+    <!-- 视频全屏容器（覆盖所有内容，包括状态栏、导航栏） -->
+    <FrameLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:visibility="gone"
+         android:background="#FF000000"
+         android:id="@+id/fullscreen_video_container"
+         android:fitsSystemWindows="false" />
+
+</FrameLayout>

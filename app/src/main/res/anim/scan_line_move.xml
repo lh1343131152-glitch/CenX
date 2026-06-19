@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扫描线从上到下的循环移动动画 -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    android:repeatMode="reverse"
+    android:repeatCount="infinite">
+
+    <translate
+        android:fromYDelta="-120dp"
+        android:toYDelta="120dp"
+        android:duration="2500" />
+
+</set>

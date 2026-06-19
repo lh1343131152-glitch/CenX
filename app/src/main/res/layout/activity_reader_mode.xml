@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reader_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F6EFD9">
+
+    <RelativeLayout
+        android:id="@+id/reader_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:gravity="center_vertical"
+        android:background="#F6EFD9">
+
+        <ImageButton
+            android:id="@+id/btn_reader_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/back"
+            android:tint="#5C4632"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/tv_reader_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btn_reader_back"
+            android:layout_toStartOf="@id/btn_reader_theme"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="#5C4632"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <ImageButton
+            android:id="@+id/btn_reader_theme"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/more"
+            android:tint="#5C4632"
+            android:scaleType="centerInside" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/reader_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="28dp"
+        android:background="#F6EFD9">
+
+        <TextView
+            android:id="@+id/tv_reader_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#3E2F22"
+            android:textSize="20sp"
+            android:lineSpacingExtra="12dp"
+            android:letterSpacing="0.01"
+            android:textIsSelectable="true" />
+    </ScrollView>
+
+</LinearLayout>
